@@ -1,0 +1,5 @@
+<md-button  ui-sref-active="active" ng-click="selectItem()">
+<!--<md-button >-->
+    {{section | humanizeDoc}}
+    <span class="md-visually-hidden" ng-if="isSelected()">current page</span>
+</md-button>

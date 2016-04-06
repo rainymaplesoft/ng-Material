@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MainModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ng-Material</title>
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/app.css">
+    <link rel="stylesheet" href="./assets/menu.css">
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/angular-material-icons/angular-material-icons.js"></script>
+
+    <!-- _boot -->
+    <script src="_boot/constants.js"></script>
+    <script src="_boot/ng-global.js"></script>
+    <script src="_boot/app.run.js"></script>
+    <script src="_boot/app.route.js"></script>
+    <script src="_boot/app.controller.js"></script>
+
+    <!-- services-->
+
+    <!-- directives-->
+    <script src="directives/menu/menu.js"></script>
+    <script src="directives/menu/menuToggle.js"></script>
+    <script src="directives/menu/menuLink.js"></script>
+
+    <!-- views -->
+    <script src="views/home/home.js"></script>
+
+</head>
+
+<body ng-cloak>
+    <home></home>
+<!--<div class="fill-height">
+    <div ui-view=""></div>
+</div>-->
+</body>
+</html>

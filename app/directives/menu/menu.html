@@ -1,0 +1,29 @@
+<div layout="row" class="toggle-menu">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z1" md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
+        <md-toolbar md-scroll-shrink>
+            <div class="header-bg">
+                <div class="avatar">
+                    <img src="assets/images/avatar_01.jpg">
+                </div>
+                <ng-md-icon icon="android" style="fill:{{vm.fillColor}}" size="24"></ng-md-icon>
+                <md-button>Button Test</md-button>
+            </div>
+        </md-toolbar>
+
+        <div class="menu-content">
+            <ul class="side-menu">
+                <li ng-repeat="section in vm.menu" class="parent-list-item"
+                    ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+                    <h2 class="menu-heading" ng-if="section.type === 'heading'"
+                        id="heading_{{ section.name | nospace }}">
+                        {{section}}
+                    </h2>
+                    <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+                    <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                </li>
+            </ul>
+
+        </div>
+    </md-sidenav>
+</div>
