@@ -7,6 +7,7 @@ module App.Web{
         public static DIRECTIVE_MENU_LINK = 'menuLink';
         public static DIRECTIVE_MENU_TOGGLE = 'menuToggle';
         
-        public static SERVICE_MENU ='service.menu';
+        public static SERVICE_MOCKDATA ='service.mockData';
+        public static SERVICE_REPOSITORY ='service.repository';
     }
 }
