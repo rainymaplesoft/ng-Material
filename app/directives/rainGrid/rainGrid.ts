@@ -123,7 +123,7 @@ module App.Web {
         }
 
         restrict = 'AE';
-        templateUrl = 'rainModules/rainGrid/_rainGridTemplate.html';
+        templateUrl = 'directives/rainGrid/rainGrid.html';
         replace = false;
         scope = {
             rainGrid: '='

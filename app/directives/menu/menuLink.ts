@@ -4,7 +4,8 @@ module App.Web {
     const _sideMenu ='^'+Constants.DIRECTIVE_SIDE_MENU;
     
     interface IScope extends ng.IScope{
-        selectItem():void
+        selectItem():void;
+        section:IMenuSection;
     }
     
     /** --  Directive -- **/
@@ -22,6 +23,9 @@ module App.Web {
                 // set flag to be used later when
                 // $locationChangeSuccess calls openPage()
                 menuCtrl.autoFocusContent = true;
+                if(scope.section.state){
+                    menuCtrl.navigate(scope.section.state);
+                }
             };
         }
     }

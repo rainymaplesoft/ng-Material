@@ -26,7 +26,7 @@ module App.Web {
     }
     export class RainGridService<T> implements IRainGridService {
 
-        static $inject = ['$parse', '$modal'];
+        static $inject = ['$parse'];
 
         constructor(private $parse:ng.IParseService) {
         }

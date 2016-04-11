@@ -63,7 +63,7 @@ module App.Web {
                     pages: [
                         {
                             name: 'Student List',
-                            state: '',
+                            state: 'student_list',
                             type: 'link',
                         },
                         {

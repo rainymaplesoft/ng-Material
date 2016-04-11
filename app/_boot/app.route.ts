@@ -12,18 +12,23 @@ module App.Web {
             $urlRouterProvider.otherwise("/");
 
             $stateProvider
-                .state('home', {
+                /*.state('home', {
                     url: '/',
                     template:'<home></home>'
 
-                    /*views: {
+                    /!*views: {
 
                         '@': {
                             templateUrl: 'home.view.html',
                             controller: 'HomeCtrl as vm'
                         }
-                    }*/
-                });
+                    }*!/
+                })*/
+                .state('student_list',{
+                    url:'studentlist',
+                    template:'<student-list></student-list>'
+                })
+            ;
 /*                .state('home.beers', {
                     url: 'beers',
                     abstract: true
@@ -74,12 +79,12 @@ module App.Web {
             return function (doc) {
                 if (!doc) return;
                 if (doc.type === 'directive') {
-                    return doc.name.replace(/([A-Z])/g, function ($1) {
+                    return doc.replace(/([A-Z])/g, function ($1) {
                         return '-' + $1.toLowerCase();
                     });
                 }
 
-                return doc.label || doc.name;
+                return doc;
             };
         });
 }

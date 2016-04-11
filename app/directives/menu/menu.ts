@@ -28,14 +28,15 @@ module App.Web {
     export interface ISideMenuController {
         isOpen(section:IMenuSection):boolean,
         toggleOpen(section:IMenuSection):void,
-        autoFocusContent:boolean
+        autoFocusContent:boolean;
+        navigate(state:string):void;
     }
 
     class sideMenuController implements ISideMenuController {
 
-        static $inject = [Constants.SERVICE_MOCKDATA];
+        static $inject = [Constants.SERVICE_MOCKDATA,NGGlobal.$STATESERVICE];
 
-        constructor(private mockDataService:IMockDataService) {
+        constructor(private mockDataService:IMockDataService,private state:ng.ui.IStateService) {
             this.autoFocusContent = false;
         }
 
@@ -54,6 +55,9 @@ module App.Web {
             this.openedSection = this.openedSection === section ? null : section;
         }
 
+        public navigate(state:string){
+            this.state.go(state);
+        }
     }
 
     angular.module(Constants.MAIN_MODULE).controller(_sideMenuController, sideMenuController);
