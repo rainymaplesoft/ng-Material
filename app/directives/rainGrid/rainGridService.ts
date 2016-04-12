@@ -32,10 +32,10 @@ module App.Web {
         }
 
         setPaginationIcons():void {
-            $('ul.pagination a:contains("<<"):first').html("<i class='fa fa-angle-double-left page-arrow'></i>");
+            /*$('ul.pagination a:contains("<<"):first').html("<i class='fa fa-angle-double-left page-arrow'></i>");
             $('ul.pagination a:contains(">>"):first').html("<i class='fa fa-angle-double-right page-arrow'></i>");
             $('ul.pagination a:contains("<"):first').html("<i class='fa fa-angle-left page-arrow'></i>");
-            $('ul.pagination a:contains(">"):first').html("<i class='fa fa-angle-right page-arrow'></i>");
+            $('ul.pagination a:contains(">"):first').html("<i class='fa fa-angle-right page-arrow'></i>");*/
         }
 
         getDataListByPage(dataList:Array<IGridRow>, page:number, pageSize:number):Array<IGridRow> {

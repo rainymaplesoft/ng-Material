@@ -40,7 +40,7 @@ module App.Web {
             this.autoFocusContent = false;
         }
 
-        menu:IMenuSection[] = this.mockDataService.GetData<IMenuSection>('menu');
+        menu:IMenuSection[] = this.mockDataService.GetMenuSections();
 
         public openedSection:IMenuSection;
 

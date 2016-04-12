@@ -16,7 +16,7 @@ module App.Web {
     }
     class RainGridCell {
         restrict = "AE";
-        templateUrl = "rainModules/rainGrid/rainGridCell/rainGridCellTemplate.html";
+        templateUrl = "directives/rainGrid/rainGridCell.html";
         replace = false;
         scope = {
             value: '=',

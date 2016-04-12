@@ -3,6 +3,7 @@
 /// <reference path="ng-global.ts" />
 /// <reference path="../models/models.ts" />
 /// <reference path="../services/mockData.ts" />
+/// <reference path="../services/repository.ts" />
 /// <reference path="../directives/menu/menu.ts" />
 /// <reference path="../directives/rainGrid/rainGrid.ts" />
 /// <reference path="../directives/rainGrid/rainGridService.ts" />

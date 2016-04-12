@@ -1,33 +1,19 @@
 /// <reference path="../_boot/ref.d.ts" />
 module App.Web {
     export interface IMockDataService {
-        GetData<T>(modelName):Array<T>;
+        GetMenuSections():IMenuSection[];
+        GetStudents():angular.IPromise<Student[]>;
+        GetObjectives():angular.IPromise<Objective[]>
     }
     export class MockDataService implements IMockDataService{
-
+        static $inject = [NGGlobal.$Q];
+        constructor(private qService:ng.IQService){
+            
+        }
         // ----------- Mock Data -------------
 
-        public GetData<T>(modelName) {
-            var data = [];
-            switch (modelName.toLowerCase()) {
-                case "menu":
-                    data = App.Web.MockDataService.getMenuSections();
-                    break;
-                case "student":
-                    data = App.Web.MockDataService.getStudents();
-                    break;
-                case "objective":
-                    data = App.Web.MockDataService.getObjectives();
-                    break;
-                default :
-                    break;
-            }
 
-            return data;
-        }
-
-        private static getMenuSections():IMenuSection[] {
-
+        public GetMenuSections():IMenuSection[] {
             return [
                 {
                     name: 'Get Started',
@@ -124,8 +110,9 @@ module App.Web {
             ];
         }
 
-        private static getStudents():Student[] {
-            return [
+        public GetStudents():angular.IPromise<Student[]> {
+            let deferred = this.qService.defer<Student[]>();
+            let students= [
                 {
                     "studentId": "1",
                     "firstName": "first",
@@ -638,10 +625,13 @@ module App.Web {
                     "lastName": "\tL\t104\t ",
                     "schoolName": "School A"
                 }];
+            deferred.resolve(students);
+            return deferred.promise;
         }
 
-        private static getObjectives():Objective[] {
-            return [
+        public GetObjectives():angular.IPromise<Objective[]>  {
+            let deferred = this.qService.defer<Objective[]>();
+            let objectives= [
                 {
                     "studentKey": 2,
                     "objectiveKey": 112,
@@ -742,6 +732,8 @@ module App.Web {
                     "iepObjective": false,
                     "otObjective": false
                 }];
+            deferred.resolve(objectives);
+            return deferred.promise;
         }
     }
 
