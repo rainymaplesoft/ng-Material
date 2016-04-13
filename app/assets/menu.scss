@@ -1,9 +1,5 @@
 /* Styles go here */
-
-body {
-  font-family: 'Ubuntu', sans-serif;
-  color: orangered;
-}
+$color-primary-text:#212121;
 
 .menu-content {
   display: block;
@@ -14,7 +10,7 @@ body {
   background-color: rgb(255, 255, 255);
 
   ul.side-menu {
-    color:#5D4037;
+    color:$color-primary-text;
     list-style: none;
     padding: 0;
     margin-top: 0;

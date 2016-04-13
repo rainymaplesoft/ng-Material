@@ -3,17 +3,17 @@ module App.Web {
 
     const _toolbarController = 'toolbarController';
     interface IScope extends ng.IScope {
-        isOpen():boolean;
-        toggle():void;
         getToolbarWidth():number;
-        section:IMenuSection;
+        title:string;
     }
 
     class ToolbarDirective {
         restrict = 'AE';
         templateUrl = 'directives/toolbar/toolbar.html';
         replace = true;
-        scope = {};
+        scope = {
+            title:'@'
+        };
         controller = _toolbarController;
         controllerAs = 'vm';
         link = (scope:IScope, element:ng.IAugmentedJQuery, attr:ng.IAttributes)=> {

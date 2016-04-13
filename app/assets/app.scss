@@ -1,13 +1,30 @@
 
+/* --- general adjustment --- */
+
 /* hide any cloaked element until it is rendered with value */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-
-.home_content{
-  min-height: 100%;
-  display: flex;
+input:active, a:active, input:focus, a:focus,th:focus,tr:focus,td:focus {
+  outline: none;
 }
+
+input[type=number]:hover::-webkit-inner-spin-button,
+input[type=number]:hover::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  opacity: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  opacity: 0;
+}
+
+/* --- end of general adjustment --- */
+
 
 /* flex */
 .flex {
@@ -58,4 +75,16 @@
 
 .toolbar-right-section{
 
+}
+
+
+/* --- page styles --- */
+
+.home_content{
+  min-height: 100%;
+  display: flex;
+}
+.main-content{
+  width:100%;
+  padding:10px;
 }
