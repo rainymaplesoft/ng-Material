@@ -9,7 +9,7 @@ module App.Web {
         constructor($stateProvider:angular.ui.IStateProvider,
                     $urlRouterProvider:angular.ui.IUrlRouterProvider) {
 
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise("/studentlist");
 
             $stateProvider
                 /*.state('home', {
@@ -25,7 +25,7 @@ module App.Web {
                     }*!/
                 })*/
                 .state('student_list',{
-                    url:'studentlist',
+                    url:'/studentlist',
                     template:'<student-list></student-list>'
                 })
             ;

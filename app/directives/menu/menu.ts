@@ -34,9 +34,10 @@ module App.Web {
 
     class sideMenuController implements ISideMenuController {
 
-        static $inject = [Constants.SERVICE_MOCKDATA,NGGlobal.$STATESERVICE];
+        static $inject = [Constants.SERVICE_MOCKDATA, NGGlobal.$STATESERVICE, NGGlobal.MD_SIDE_NAV];
 
-        constructor(private mockDataService:IMockDataService,private state:ng.ui.IStateService) {
+        constructor(private mockDataService:IMockDataService, private state:ng.ui.IStateService,
+                    private $mdSideNav:angular.material.ISidenavService) {
             this.autoFocusContent = false;
         }
 
@@ -47,7 +48,6 @@ module App.Web {
         public autoFocusContent:boolean;
 
         public isOpen(section:IMenuSection):boolean {
-            var aa = this.openedSection === section;
             return this.openedSection === section;
         }
 
@@ -55,8 +55,13 @@ module App.Web {
             this.openedSection = this.openedSection === section ? null : section;
         }
 
-        public navigate(state:string){
+        public navigate(state:string) {
+            let sideMenu =this.$mdSideNav('left');
             this.state.go(state);
+            // close the side menu if it's in the narrow screen mode
+            if(!sideMenu.isLockedOpen() && sideMenu.isOpen()){
+                sideMenu.toggle();
+            }
         }
     }
 

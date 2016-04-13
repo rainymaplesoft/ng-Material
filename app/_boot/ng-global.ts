@@ -28,6 +28,7 @@ module App.Web {
         public static $ROUTE_PROVIDER: string = '$routeProvider';
         public static $SCE: string = '$sce';
         public static $SCOPE: string = '$scope';
+        public static WINDOW_SERVICE = '$window';
         public static $TEMPLATE_CACHE = "$templateCache";
         public static $TIMEOUT = "$timeout";
         public static NG_RESOURCE: string = 'ngResource';
@@ -48,5 +49,8 @@ module App.Web {
         public static UI_MODALINSTANCE = '$uibModalInstance';
         public static GOOGLE_PLACE = 'google.places';
         public static NG_TRANSLATION = 'pascalprecht.translate';
+        public static MD_SIDE_NAV = '$mdSidenav';
+        public static MD_MEDIA = '$mdMedia';
+
     }
 }
