@@ -12,7 +12,7 @@ module App.Web {
         templateUrl = 'directives/toolbar/toolbar.html';
         replace = true;
         scope = {
-            title:'@'
+            title: '@'
         };
         controller = _toolbarController;
         controllerAs = 'vm';
@@ -31,16 +31,18 @@ module App.Web {
 
         constructor(private scope:IScope, private $mdSideNav:angular.material.ISidenavService,
                     private $window:angular.IWindowService, private $mdMedia:angular.material.IMedia) {
-            let self = this;
-            let window = angular.element($window);
-            window.bind('resize', ()=>self.scope.$apply());
+            /*
+             let self = this;
+             let window = angular.element($window);
+             window.bind('resize', ()=>self.scope.$apply());
 
-            this.scope.$watch(
-                ()=> $window.innerWidth,
-                function (newValue, oldValue) {
-                    let w = self.scope.getToolbarWidth();
-                    //console.log(w);
-                });
+             this.scope.$watch(
+             ()=> $window.innerWidth,
+             function (newValue, oldValue) {
+             let w = self.scope.getToolbarWidth();
+             //console.log(w);
+             });
+             */
         }
 
         toggleSideNav() {

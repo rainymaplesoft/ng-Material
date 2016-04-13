@@ -106,7 +106,8 @@ module App.Web {
                 {label: ' 5', value: 5},
                 {label: '10', value: 10},
                 {label: '15', value: 15},
-                {label: '20', value: 20}
+                {label: '20', value: 20},
+                {label: '30', value: 30}
             ];
             this.$scope.pageSize = this.$scope.pageSizes[1];
             if (this.$scope.gridOptions.pageSize) {
