@@ -1,15 +1,20 @@
 /// <reference path="ref.d.ts" />
 module App.Web {
-    angular.module(Constants.MAIN_MODULE,
+    let module = angular.module(Constants.MAIN_MODULE,
         [
             NGGlobal.NG_MATARIAL,
             NGGlobal.NG_MATARIAL_ICONS,
-            NGGlobal.UIROUTER
+            NGGlobal.NG_COMPONENT_ROUTER
+            //NGGlobal.UIROUTER
 
-        ])
-        .config(function($mdThemingProvider) {
-            $mdThemingProvider.theme('default')
-                .primaryPalette('teal')
-                .accentPalette('deep-purple');
-        });
+        ]);
+
+    /** tell the router the root of the router is 'mainApp' */
+    module.value("$routerRootComponent",'mainApp');
+
+    module.config(function ($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('teal')
+            .accentPalette('deep-purple');
+    });
 }

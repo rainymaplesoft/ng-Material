@@ -44,6 +44,7 @@ module App.Web {
         public static $URLROUTERPROVIDER = '$urlRouterProvider';
         public static $STATESERVICE = '$state';
         public static UIROUTER = 'ui.router';
+        public static NG_COMPONENT_ROUTER = 'ngComponentRouter';
         public static UI_BOOTSTRAP = 'ui.bootstrap';
         public static UI_MODAL = '$uibModal';
         public static UI_MODALINSTANCE = '$uibModalInstance';

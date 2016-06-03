@@ -14,7 +14,7 @@ module App.Web {
 
     }
 
-    angular.module(Constants.MAIN_MODULE).directive("studentList",
+    angular.module(Constants.MAIN_MODULE).directive(Constants.COMPONENT_STUDENT_LIST,
         () => new StudentListDirective());
 
     class studentListController {

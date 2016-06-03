@@ -23,7 +23,7 @@ module App.Web {
         controllerAs = 'vm';
     }
 
-    angular.module(Constants.MAIN_MODULE).directive(Constants.DIRECTIVE_SIDE_MENU, () => new SideMenuDirective());
+    angular.module(Constants.MAIN_MODULE).directive(Constants.COMPONENT_SIDE_MENU, () => new SideMenuDirective());
 
     export interface ISideMenuController {
         isOpen(section:IMenuSection):boolean,
