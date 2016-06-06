@@ -4,18 +4,17 @@ module App.Web {
     const _studentController = 'studentListController';
 
     /** --  Directive -- **/
-    class StudentListDirective {
-        restrict = 'AE';
+    class StudentListComponent {
+        //restrict = 'AE';
         templateUrl = 'views/student/studentList.html';
-        replace = false;
-        scope = {};
+        //replace = false;
+        //scope = {};
         controller = _studentController;
         controllerAs = 'vm';
 
     }
 
-    angular.module(Constants.MAIN_MODULE).directive(Constants.COMPONENT_STUDENT_LIST,
-        () => new StudentListDirective());
+    angular.module(Constants.MAIN_MODULE).component(Constants.COMPONENT_STUDENT_LIST, new StudentListComponent());
 
     class studentListController {
         static $inject = [Constants.SERVICE_REPOSITORY, Constants.SERVICE_MOCKDATA];

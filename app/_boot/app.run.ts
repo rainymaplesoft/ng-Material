@@ -10,11 +10,15 @@ module App.Web {
         ]);
 
     /** tell the router the root of the router is 'mainApp' */
-    module.value("$routerRootComponent",'mainApp');
+    module.value("$routerRootComponent",Constants.COMPONENT_MAIN_APP);
 
     module.config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('teal')
             .accentPalette('deep-purple');
+    });
+
+    module.component("appAbout",{
+        template:"This is the about page"
     });
 }

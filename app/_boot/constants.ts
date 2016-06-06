@@ -2,7 +2,7 @@ module App.Web{
     export class Constants{
         public static MAIN_MODULE = 'MainModule';
         
-        public static COMPONENT_HOME = 'home';
+        public static COMPONENT_MAIN_APP = 'mainApp';
         public static COMPONENT_SIDE_MENU = 'sideMenu';
         public static COMPONENT_MENU_LINK = 'menuLink';
         public static COMPONENT_MENU_TOGGLE = 'menuToggle';

@@ -17,16 +17,17 @@ module App.Web {
      angular.module(Constants.MAIN_MODULE).directive(Constants.DIRECTIVE_HOME, () => new Directive());
      */
     class Component {
-        templateUrl = 'views/home/home.html';
-        controller = _homeController;
-        controllerAs = 'vm';
-        $routeConfig:[
-            { path:'/studentlist',component:'studentList',name:'studentlist'},
-            {path:'/**',redirectTo:['studentList']}
-            ];
+        templateUrl = 'views/main-app/main-app.html';
+        //controller = _homeController;
+        //controllerAs = 'vm';
+        $routeConfig = [
+            {path: '/studentlist', component: Constants.COMPONENT_STUDENT_LIST, name: 'StudentList'},
+            {path: '/about', component: 'appAbout', name: 'About'},
+            {path: '/**', redirectTo: ['StudentList']}
+        ];
 
     }
-    angular.module(Constants.MAIN_MODULE).directive(Constants.COMPONENT_HOME, () => new Component());
+    angular.module(Constants.MAIN_MODULE).component(Constants.COMPONENT_MAIN_APP, new Component());
 
     class homeController {
 
